@@ -1,3 +1,5 @@
+Link to the app: https://gitevx.github.io/govtcontract/
+
 # Government Tender Management Portal
 
 This project allow Government agencies create tendering procedure through a solicitation to participate in a tender using ALGO smart contracts.
