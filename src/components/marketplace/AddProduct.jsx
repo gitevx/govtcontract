@@ -67,10 +67,10 @@ return (
                             }}>
       <option>Available Services</option>
       <option value= {`https://gitevx.github.io/govtcontract/services/electricity.png`}>Electricity</option>
-      <option value={`${domain}algorand-marketplace/services/communications.png`}>Communications</option>
-      <option value={`${domain}algorand-marketplace/services/legal.png`}>Legal</option>
-      <option value={`${domain}algorand-marketplace/services/it.png`}>IT</option>
-      <option value={`${domain}algorand-marketplace/services/crypto.png`}>Crypto</option>
+      <option value={`${domain}services/communications.png`}>Communications</option>
+      <option value={`${domain}services/legal.png`}>Legal</option>
+      <option value={`${domain}services/it.png`}>IT</option>
+      <option value={`${domain}services/crypto.png`}>Crypto</option>
     </Form.Select>
 
 
