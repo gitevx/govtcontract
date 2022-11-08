@@ -66,7 +66,7 @@ return (
                                 setImage(e.target.value);
                             }}>
       <option>Available Services</option>
-      <option value= {`${domain}algorand-marketplace/services/electricity.png`}>Electricity</option>
+      <option value= {`https://gitevx.github.io/govtcontract/services/electricity.png`}>Electricity</option>
       <option value={`${domain}algorand-marketplace/services/communications.png`}>Communications</option>
       <option value={`${domain}algorand-marketplace/services/legal.png`}>Legal</option>
       <option value={`${domain}algorand-marketplace/services/it.png`}>IT</option>
