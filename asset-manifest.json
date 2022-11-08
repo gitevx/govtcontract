@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/govtcontract/static/css/main.3bd1ba14.chunk.css",
-    "main.js": "/govtcontract/static/js/main.f07a2e14.chunk.js",
-    "main.js.map": "/govtcontract/static/js/main.f07a2e14.chunk.js.map",
+    "main.js": "/govtcontract/static/js/main.22534b96.chunk.js",
+    "main.js.map": "/govtcontract/static/js/main.22534b96.chunk.js.map",
     "runtime-main.js": "/govtcontract/static/js/runtime-main.cbff68b7.js",
     "runtime-main.js.map": "/govtcontract/static/js/runtime-main.cbff68b7.js.map",
     "static/css/2.fb224ccb.chunk.css": "/govtcontract/static/css/2.fb224ccb.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.fb224ccb.chunk.css",
     "static/js/2.61f8c611.chunk.js",
     "static/css/main.3bd1ba14.chunk.css",
-    "static/js/main.f07a2e14.chunk.js"
+    "static/js/main.22534b96.chunk.js"
   ]
 }
