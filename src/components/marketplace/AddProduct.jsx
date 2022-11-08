@@ -5,7 +5,7 @@ import {stringToMicroAlgos} from "../../utils/conversions";
 
 
 //change the domain here for correct image download
-const domain = "https://gitevx.github.io/govtcontract/";
+const domain = "https://gitevx.github.io/govtcontract/ ";
 
 const AddProduct = ({createProduct}) => {
     const [name, setName] = useState("");
