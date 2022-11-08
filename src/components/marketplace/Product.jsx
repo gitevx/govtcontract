@@ -5,7 +5,7 @@ import {microAlgosToString, truncateAddress} from "../../utils/conversions";
 import Identicon from "../utils/Identicon";
 
 const Product = ({address, product, buyProduct, deleteProduct}) => {
-    const {name, image, description, price, sold, appId, owner} =
+    const {name, image, document, date, description, price, sold, appId, owner} =
         product;
 
     const [count, setCount] = useState(1)
@@ -18,18 +18,21 @@ const Product = ({address, product, buyProduct, deleteProduct}) => {
                         <span className="font-monospace text-secondary">{truncateAddress(owner)}</span>
                         <Identicon size={28} address={owner}/>
                         <Badge bg="secondary" className="ms-auto">
-                            {sold} Sold
+                            {sold} Tender applications: 
                         </Badge>
                     </Stack>
                 </Card.Header>
-                <div className="ratio ratio-4x3">
-                    <img src={image} alt={name} style={{objectFit: "cover"}}/>
+                <div className="ratio-4x3" style={{display: "flex"}}>
+                    <img src={image} alt={name} style={{objectFit: "cover", width: 200, margin: "auto"}}/>
                 </div>
                 <Card.Body className="d-flex flex-column text-center">
                     <Card.Title>{name}</Card.Title>
+                    <Card.Link className="flex-grow-1" href={document} target="_blank">Link to the tender documents</Card.Link>
+                    <Card.Text className="flex-grow-1" style={{color: "red"}}>{`Document submission due date: ${date}`}</Card.Text>
+                    <Card.Subtitle>Contract description</Card.Subtitle>
                     <Card.Text className="flex-grow-1">{description}</Card.Text>
                     <Form className="d-flex align-content-stretch flex-row gap-2">
-                        <FloatingLabel
+                        {/* <FloatingLabel
                             controlId="inputCount"
                             label="Count"
                             className="w-25"
@@ -43,13 +46,13 @@ const Product = ({address, product, buyProduct, deleteProduct}) => {
                                     setCount(Number(e.target.value));
                                 }}
                             />
-                        </FloatingLabel>
+                        </FloatingLabel> */}
                         <Button
                             variant="outline-dark"
                             onClick={() => buyProduct(product, count)}
                             className="w-75 py-3"
                         >
-                            Buy for {microAlgosToString(price) * count} ALGO
+                            Accept tender for:{microAlgosToString(price) * count} ALGO
                         </Button>
                         {product.owner === address &&
                             <Button

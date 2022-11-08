@@ -16,9 +16,11 @@ import clearProgram from "!!raw-loader!../contracts/marketplace_clear.teal";
 import {base64ToUTF8String, utf8ToBase64String} from "./conversions";
 
 class Product {
-    constructor(name, image, description, price, sold, appId, owner) {
+    constructor(name, image, document, date, description, price, sold, appId, owner) {
         this.name = name;
         this.image = image;
+        this.document=document;
+        this.date=date;
         this.description = description;
         this.price = price;
         this.sold = sold;
@@ -52,10 +54,12 @@ export const createProductAction = async (senderAddress, product) => {
     let note = new TextEncoder().encode(marketplaceNote);
     let name = new TextEncoder().encode(product.name);
     let image = new TextEncoder().encode(product.image);
+    let document = new TextEncoder().encode(product.document)
+    let date = new TextEncoder().encode(product.date)
     let description = new TextEncoder().encode(product.description);
     let price = algosdk.encodeUint64(product.price);
 
-    let appArgs = [name, image, description, price]
+    let appArgs = [name, image, document, date, description, price]
 
     // Create ApplicationCreateTxn
     let txn = algosdk.makeApplicationCreateTxnFromObject({
@@ -217,6 +221,8 @@ const getApplication = async (appId) => {
         let owner = response.application.params.creator
         let name = ""
         let image = ""
+        let document = ""
+        let date = ""
         let description = ""
         let price = 0
         let sold = 0
@@ -236,6 +242,14 @@ const getApplication = async (appId) => {
             let field = getField("IMAGE", globalState).value.bytes
             image = base64ToUTF8String(field)
         }
+        if (getField("DOCUMENT", globalState) !== undefined) {
+            let field = getField("DOCUMENT", globalState).value.bytes
+            document = base64ToUTF8String(field)
+        }
+        if (getField("DATE", globalState) !== undefined) {
+            let field = getField("DATE", globalState).value.bytes
+            date = base64ToUTF8String(field)
+        }
 
         if (getField("DESCRIPTION", globalState) !== undefined) {
             let field = getField("DESCRIPTION", globalState).value.bytes
@@ -250,7 +264,7 @@ const getApplication = async (appId) => {
             sold = getField("SOLD", globalState).value.uint
         }
 
-        return new Product(name, image, description, price, sold, appId, owner)
+        return new Product(name, image, document, date, description, price, sold, appId, owner)
     } catch (err) {
         return null;
     }

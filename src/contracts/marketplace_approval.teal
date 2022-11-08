@@ -56,14 +56,14 @@ global CreatorAddress
 return
 main_l8:
 txn NumAppArgs
-int 4
+int 6
 ==
 assert
 txn Note
-byte "tutorial-marketplace:uv1"
+byte "govtcontract:uv1"
 ==
 assert
-txna ApplicationArgs 3
+txna ApplicationArgs 5
 btoi
 int 0
 >
@@ -74,11 +74,17 @@ app_global_put
 byte "IMAGE"
 txna ApplicationArgs 1
 app_global_put
-byte "DESCRIPTION"
+byte "DOCUMENT"
 txna ApplicationArgs 2
 app_global_put
-byte "PRICE"
+byte "DATE"
 txna ApplicationArgs 3
+app_global_put
+byte "DESCRIPTION"
+txna ApplicationArgs 4
+app_global_put
+byte "PRICE"
+txna ApplicationArgs 5
 btoi
 app_global_put
 byte "SOLD"

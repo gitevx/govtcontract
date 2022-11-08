@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #fff1eb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(255,241,235,0.5), rgba(172,224,249,0.5));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(255,241,235,0.5), rgba(172,224,249,0.5))
+}

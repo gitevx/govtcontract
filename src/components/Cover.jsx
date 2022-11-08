@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 const Cover = ({name, coverImg, connect}) => {
     return (
-        <div className="d-flex justify-content-center flex-column text-center bg-black min-vh-100">
-            <div className="mt-auto text-light mb-5">
+        <div className="gradient-custom d-flex justify-content-center flex-column text-center min-vh-100">
+            <div className="mt-auto text-dark mb-5">
                 <div
                     className=" ratio ratio-1x1 mx-auto mb-2"
                     style={{maxWidth: "320px"}}
@@ -13,14 +13,15 @@ const Cover = ({name, coverImg, connect}) => {
                     <img src={coverImg} alt=""/>
                 </div>
                 <h1>{name}</h1>
-                <p>Please connect your wallet to continue.</p>
+                <p>Identify yourself with your entity wallet to negotiate Public Sector contracts</p>
                 <Button
                     onClick={() => connect()}
-                    variant="outline-light"
+                    variant="outline-dark"
                     className="rounded-pill px-3 mt-3"
                 >
-                    Connect Wallet
+                    Secure Identification
                 </Button>
+
             </div>
             <p className="mt-auto text-secondary">Powered by Algorand</p>
         </div>
