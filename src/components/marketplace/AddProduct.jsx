@@ -5,7 +5,7 @@ import {stringToMicroAlgos} from "../../utils/conversions";
 
 
 //change the domain here for correct image download
-const domain = "https://gitevx.github.io/govtcontract/";
+const domainURL = "https://gitevx.github.io/govtcontract/";
 
 const AddProduct = ({createProduct}) => {
     const [name, setName] = useState("");
@@ -66,11 +66,11 @@ return (
                                 setImage(e.target.value);
                             }}>
       <option>Available Services</option>
-      <option value= {`https://gitevx.github.io/govtcontract/services/electricity.png`}>Electricity</option>
-      <option value={`${domain}services/communications.png`}>Communications</option>
-      <option value={`${domain}services/legal.png`}>Legal</option>
-      <option value={`${domain}services/it.png`}>IT</option>
-      <option value={`${domain}services/crypto.png`}>Crypto</option>
+      <option value={`${domainURL}services/electricity.png`}>Electricity</option>
+      <option value={`${domainURL}services/communications.png`}>Communications</option>
+      <option value={`${domainURL}services/legal.png`}>Legal</option>
+      <option value={`${domainURL}services/it.png`}>IT</option>
+      <option value={`${domainURL}services/crypto.png`}>Crypto</option>
     </Form.Select>
 
 
